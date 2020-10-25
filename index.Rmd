@@ -588,5 +588,6 @@ ggsave(paste0("plots_srn/sir", name, "_", fitted_projected$Date[max(Day)], "_log
 ## Appendix
 Detailed projected data.
 ```{r}
+fitted_projected$new_cases = diff(c(NA, fitted_projected$total_infected))
 knitr::kable(fitted_projected, format="markdown")
 ```
