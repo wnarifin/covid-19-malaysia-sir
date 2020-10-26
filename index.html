@@ -373,14 +373,14 @@ summary {
 
 <h1 class="title toc-ignore">Covid-19 SIR Modeling Malaysia</h1>
 <h4 class="author">Wan Nor Arifin (USM), Chan Weng Howe (UTM)</h4>
-<h4 class="date">Sun, 25 Oct 2020 7:48:23 PM</h4>
+<h4 class="date">Mon, 26 Oct 2020 8:14:31 PM</h4>
 
 </div>
 
 
 <div id="description" class="section level2">
 <h2>Description</h2>
-<p>This SIR model is modeled by finding the best parameters that fit to Covid-19 Malaysian data up to Sun, 25 Oct 2020.</p>
+<p>This SIR model is modeled by finding the best parameters that fit to Covid-19 Malaysian data up to Mon, 26 Oct 2020.</p>
 <p>The SIR model is defined by the following set of ordinary differential equations (Ref: Wikipedia):</p>
 <p><span class="math display">\[
 \frac{dS}{dt} = -\frac{\beta IS}{N} \\
@@ -394,7 +394,7 @@ R_0 = \frac{\beta}{\gamma}
 <p>Apart from finding the <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> parameter values, experts are concerned about the number of susceptible individuals. Thus, the model is also iterated over decreasing number of initial susceptible individuals (<span class="math inline">\(n\)</span>) to find this optimal <span class="math inline">\(n\)</span>.</p>
 <p>To fit the model to the data, the following weighted loss function is defined, extending the basic residual sum of squares (RSS) formulation:</p>
 <p><span class="math display">\[
-RSS = w_1\sum(I_i - \hat I_i)^2 + w_2\sum(R_i - \hat R_i)^2 + w_3\sum([I_i + R_i] - [\hat I_i + \hat R_i])^2
+RSS = w_1\sum_{i=1}^t(I_i - \hat I_i)^2 + w_2\sum_{i=1}^t(R_i - \hat R_i)^2 + w_3\sum_{i=1}^t([I_i + R_i] - [\hat I_i + \hat R_i])^2
 \]</span> where <span class="math inline">\(w_1\)</span>, <span class="math inline">\(w_2\)</span> and <span class="math inline">\(w_3\)</span> allow adjustment of weightage given to <span class="math inline">\(I\)</span>, <span class="math inline">\(R\)</span> respectively to balance the model fit. We are inclined to give more weight to <span class="math inline">\(I\)</span> through <span class="math inline">\(w_1\)</span> and <span class="math inline">\(I + R\)</span> through <span class="math inline">\(w_3\)</span>.</p>
 <p>Here, given the limitation of the optimization, one might argue that the <span class="math inline">\(S\)</span> found might instead be <span class="math inline">\(E\)</span> in SEIR model. This could be explored further in SEIR model, by allowing incubation period in the model. This is beyond the present SIR model to optimize.</p>
 </div>

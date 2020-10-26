@@ -35,7 +35,7 @@ Apart from finding the $\beta$ and $\gamma$ parameter values, experts are concer
 To fit the model to the data, the following weighted loss function is defined, extending the basic residual sum of squares (RSS) formulation:
 
 $$
-RSS = w_1\sum(I_i - \hat I_i)^2 + w_2\sum(R_i - \hat R_i)^2 + w_3\sum([I_i + R_i] - [\hat I_i + \hat R_i])^2
+RSS = w_1\sum_{i=1}^t(I_i - \hat I_i)^2 + w_2\sum_{i=1}^t(R_i - \hat R_i)^2 + w_3\sum_{i=1}^t([I_i + R_i] - [\hat I_i + \hat R_i])^2
 $$
 where $w_1$, $w_2$ and $w_3$ allow adjustment of weightage given to $I$,  $R$ respectively to balance the model fit. We are inclined to give more weight to $I$ through $w_1$ and $I + R$ through $w_3$.
 
