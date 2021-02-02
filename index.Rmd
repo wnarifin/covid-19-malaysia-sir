@@ -152,9 +152,39 @@ RSS = function(parameters) {
 # end_date    = "2020-08-31"
 
 # RMCO 2 #
-name = "RMCO 2"
-start_date  = "2020-09-01"
-end_date    = today()  # will analyze up to max available date
+# name = "RMCO 2"
+# start_date  = "2020-09-01"
+# end_date    = today()  # will analyze up to max available date
+
+# Sabah Election #
+# name = "Sabah Election"
+# start_date  = "2020-09-26"
+# end_date    = today()  # will analyze up to max available date
+
+# Sabah Election -> MCO 2.0 # See R0 w/out MCO
+# name = "Sabah Election"
+# start_date  = "2020-09-26"
+# end_date    = "2021-01-12"  # up to MCO 2
+
+# Sabah Election -> Unrestricted Travel # See R0 until 2020-12-06
+# name = "Sabah Election"
+# start_date  = "2020-09-26"
+# end_date    = "2020-12-06"  # up to MCO 2
+
+# RMCO 2 Unrestricted Travel -> Today #
+# name = "RMCO 2 Unrestricted Travel"
+# start_date  = "2020-12-07"
+# end_date    = today()  # will analyze up to max available date
+
+# RMCO 2 Unrestricted Travel -> MCO 2.0 # See R0 w/out MCO
+name = "RMCO 2 Unrestricted Travel"
+start_date  = "2020-12-07"
+end_date    = "2021-01-12"  # up to MCO 2
+
+# MCO 2.0 #
+# name = "MCO 2"
+# start_date  = "2021-01-13"
+# end_date    = today()  # will analyze up to max available date
 
 # Basic info from data
 Infected   = mys_data %>% filter(Date>=ymd(start_date), Date<=ymd(end_date)) %>% pull(total_cases)
