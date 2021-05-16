@@ -53,8 +53,8 @@ library(plotly)
 ## Data
 Sourced from local datasets.
 ```{r, message=FALSE}
-mys_data = read_csv("https://wnarifin.github.io/covid-19-malaysia/covid-19_my_full.csv") %>% select(1:11) %>% rename(Date = "date")
-# mys_data = read_csv("covid-19_my_full.csv") %>% select(1:11)  %>% rename(Date = "date")  # comment out to use local data
+# mys_data = read_csv("https://wnarifin.github.io/covid-19-malaysia/covid-19_my_full.csv") %>% select(1:11) %>% rename(Date = "date")
+mys_data = read_csv("covid-19_my_full.csv") %>% select(1:11)  %>% rename(Date = "date")  # comment out to use local data
 # rename date to Date for compatibility with original codes
 
 # add active variable
